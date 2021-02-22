@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="text-black-50 text-center p-2"><!--Styling-->
+        <span class="navbar-brand ml-2">BOOK LIST</span>
+    </div>
+    <div class="row m-1 p-1">
+        <div id="categories" class="col-8">
+            
+        </div>
+        <div class="col-lg-12">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

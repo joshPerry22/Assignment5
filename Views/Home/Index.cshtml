@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model ProjectListViewModel
+<head>
+    <style>
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+        
+    </style>
+</head>
+
+<div>
+    <table class="table table-striped table-dark table-hover"> <!--Listing out the attributes in a table-->
+        <thead class="thead-dark">
+            <tr><th scope="auto">Title</th><th scope="auto">Page Number</th><th scope="auto">Author First Name</th><th scope="auto">Author Last Name</th><th scope="auto">Publisher</th><th scope="auto">ISBN</th><th scope="auto">Classification</th><th scope="auto">Category</th><th scope="auto">Price</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var r in Model.Projects)
+            {
+            <tr>
+                <td >@r.Title</td>
+                <td>@r.PageNumber</td>
+                <td>@r.AuthorFirst</td>
+                <td>@r.AuthorLast</td>
+                <td>@r.Publisher</td>
+                <td>@r.ISBN</td>
+                <td>@r.Classification</td>
+                <td>@r.Category</td>
+                <td>$@r.Price</td>
+
+            </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
+<br /><br /><br />
+
+<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled ="true" page-class ="btn" 
+     page-class-normal ="btn-outline-dark" page-class-selected="btn-primary" class="btn-group pull-right m-1"></div>
+
+<!--Used class table, scope, text color, column large, table header color-->
