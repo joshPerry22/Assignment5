@@ -27,6 +27,9 @@ namespace Assignment5.Infrastructure
         public PagingInfo PageModel { get; set; }
         public string PageAction { get; set; }
         //setting pag nav components
+
+        [HtmlAttributeName(DictionaryAttributePrefix = "page-url-")] //Attribute Prefix, add into dictionary when anyone types "page-url-"
+        public Dictionary<string, object> PageUrlValues { get; set; } = new Dictionary<string, object>(); //setting up a key and value for Dictionary
         public bool PageClassesEnabled { get; set; } = false;
         public string PageClass { get; set; }
         public string PageClassNormal { get; set; }
@@ -42,7 +45,9 @@ namespace Assignment5.Infrastructure
             for (int i = 1; i <= PageModel.TotalPages; i++)
             {
                 TagBuilder tag = new TagBuilder("a"); // build A tag
-                tag.Attributes["href"] = urlHelper.Action(PageAction, new { page = i }); //set href
+
+                PageUrlValues["page"] = i;
+                tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues); //set href
 
                 if (PageClassesEnabled)
                 {

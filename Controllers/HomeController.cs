@@ -24,7 +24,7 @@ namespace Assignment5.Controllers
             _repository = repository; //assigning value to private repository
         }
 
-        public IActionResult Index(int page = 1)
+        public IActionResult Index(string category, int page = 1)
         {
 
             return View(
@@ -32,17 +32,20 @@ namespace Assignment5.Controllers
                 new ProjectListViewModel
                 {
                     Projects = _repository.Projects
+                    .Where(p => category == null || p.Category == category)
                          .OrderBy(p => p.BookId)
                          .Skip((page - 1) * PageSize)
                             .Take(PageSize)
                         ,
 
-                    PagingInfo = new PagingInfo
+                    PagingInfo = new PagingInfo //count of passed in repository
                     {
                         CurrentPage = page,
                         ItemsPerPage = PageSize,
-                        TotalNumItems = _repository.Projects.Count() //count of passed in repository
-                    }
+                        TotalNumItems = category == null ? _repository.Projects.Count() : 
+                        _repository.Projects.Where(x => x.Category == category).Count()
+                    },
+                    Type = category
                 });
     
                
