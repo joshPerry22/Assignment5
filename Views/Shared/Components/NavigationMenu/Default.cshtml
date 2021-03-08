@@ -8,7 +8,7 @@
 @foreach (string category in Model)  //getting links for all the distinct categories
 {
     <a class="btn btn-block @(category == ViewBag.SelectedType ? "btn-primary" : "btn-outline-secondary")" asp-action="Index" asp-controller="Home"
-       asp-route-category="@category" asp-route-page ="1"  >
+       asp-route-category="@category" asp-route-pageNum ="1"  >
         @category
     </a>
 }

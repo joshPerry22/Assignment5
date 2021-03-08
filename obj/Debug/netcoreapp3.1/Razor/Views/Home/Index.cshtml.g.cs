@@ -33,8 +33,15 @@ using Assignment5.Models.ViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\Josh\source\repos\Assignment5\Views\_ViewImports.cshtml"
+using Assignment5.Infrastructure;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5b4bd29f5bedcbfe1b0fa883f2f49d37c680fa1a", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"28f9b8292f66a79ddffbaf1d93764f248d82478b", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bc3456fc724067a7cb5529d560d6a8daccacd45b", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ProjectListViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("name", "ProjectSummary", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -77,7 +84,7 @@ using Assignment5.Models.ViewModels;
 #line default
 #line hidden
 #nullable disable
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b4bd29f5bedcbfe1b0fa883f2f49d37c680fa1a5523", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b4bd29f5bedcbfe1b0fa883f2f49d37c680fa1a5703", async() => {
                 WriteLiteral("\r\n    <style>\r\n        th, td {\r\n            padding: 5px;\r\n            text-align: left;\r\n        }\r\n        \r\n    </style>\r\n");
             }
             );
@@ -109,7 +116,7 @@ using Assignment5.Models.ViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5b4bd29f5bedcbfe1b0fa883f2f49d37c680fa1a7403", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5b4bd29f5bedcbfe1b0fa883f2f49d37c680fa1a7583", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -140,7 +147,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper.Model = r;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n\r\n\r\n    </table>\r\n</div>\r\n\r\n<br /><br /><br />\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b4bd29f5bedcbfe1b0fa883f2f49d37c680fa1a9207", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b4bd29f5bedcbfe1b0fa883f2f49d37c680fa1a9387", async() => {
             }
             );
             __Assignment5_Infrastructure_PageLinkTagHelper = CreateTagHelper<global::Assignment5.Infrastructure.PageLinkTagHelper>();
