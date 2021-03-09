@@ -9,7 +9,7 @@ namespace Assignment5.Models
     {
         public List<CartLine> Lines { get; set; } = new List<CartLine>();
 
-        public void AddItem (Project proj, int qty)
+        public virtual void AddItem (Project proj, int qty)
         {
             CartLine line = Lines
                 .Where(p => p.Project.BookId == proj.BookId)
@@ -31,10 +31,10 @@ namespace Assignment5.Models
 
         }
 
-        public void RemoveLine(Project proj) =>
+        public virtual void RemoveLine(Project proj) =>
             Lines.RemoveAll(x => x.Project.BookId == proj.BookId);
 
-        public void Clear() => Lines.Clear();
+        public virtual void Clear() => Lines.Clear();
 
         public decimal ComputeTotalSum()
         {
@@ -43,7 +43,7 @@ namespace Assignment5.Models
 
         public class CartLine
         {
-            public int CartLineID { get; set; }
+            public int CartLineID { get; set; } //CartlineID
             public Project Project { get; set; }
             public int Quantity { get; set; }
         }
