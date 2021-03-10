@@ -13,9 +13,10 @@ namespace Assignment5.Pages
     {
         private IBookRepository repository;
         //Constructor
-        public ShopModel (IBookRepository repo)
+        public ShopModel (IBookRepository repo, Cart cart)
         {
             repository = repo;
+            Cart = cart;
         }
         //Properties
         public Cart Cart { get; set; }
@@ -25,18 +26,18 @@ namespace Assignment5.Pages
         public void OnGet(string returnUrl)
         {
             ReturnUrl = returnUrl ?? "/";
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            Cart = HttpContext.Session.GetJson<Cart>("Cart") ?? new Cart();
         }
 
         public IActionResult OnPost(long BookId, string returnUrl)
         {
             Project project = repository.Projects.FirstOrDefault(p => p.BookId == BookId);
 
-            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            Cart = HttpContext.Session.GetJson<Cart>("Cart") ?? new Cart();
 
             Cart.AddItem(project, 1);
 
-            HttpContext.Session.SetJson("cart", Cart);
+            HttpContext.Session.SetJson("Cart", Cart);
 
             return RedirectToPage(new { returnUrl = returnUrl });
         }
